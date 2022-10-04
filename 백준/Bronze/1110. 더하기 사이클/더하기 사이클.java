@@ -1,24 +1,22 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
  
 public class Main {
  
-	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
  
-		int N = in.nextInt();
-		in.close();
-        
+		int N = Integer.parseInt(br.readLine());
+		
 		int cnt = 0;
 		int copy = N;
         
-		while (true) {
+		do {
 			N = ((N % 10) * 10) + (((N / 10) + (N % 10)) % 10);
 			cnt++;
- 
-			if (copy == N) {
-				break;
-			}
-		}
+		} while (copy != N);
+		
 		System.out.println(cnt);
 	}
 }
