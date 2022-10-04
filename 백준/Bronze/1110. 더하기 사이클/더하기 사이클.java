@@ -15,7 +15,7 @@ public class Main {
 		do {
 			N = ((N % 10) * 10) + (((N / 10) + (N % 10)) % 10);
 			cnt++;
-		} while (copy != N);
+		} while (copy != N); 
 		
 		System.out.println(cnt);
 	}
