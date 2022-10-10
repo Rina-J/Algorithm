@@ -1,26 +1,28 @@
-import java.util.Arrays;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
- 
  
 public class Main {
  
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
  
-		int N = Integer.parseInt(br.readLine());
+		Integer.parseInt(br.readLine());	//첫 줄 N 은 안쓰이므로 입력만 받는다.
 		StringTokenizer st = new StringTokenizer(br.readLine()," ");
 		
-		int index = 0;
-		int[] arr = new int[N];
-		while(st.hasMoreTokens()) {
-			arr[index] = Integer.parseInt(st.nextToken());
-			index++;
-		}
+		int max = -1000001;
+		int min = 1000001;
 		
-		Arrays.sort(arr);
-		System.out.print(arr[0] + " " + arr[N - 1]);
+		while(st.hasMoreTokens()) {
+			int val = Integer.parseInt(st.nextToken());
+			if(val>max) {
+				max = val;
+			}
+			if(val<min) {
+				min = val;
+			}
+		}
+		System.out.println(min + " " + max);
 	}
 }
