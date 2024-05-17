@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -19,23 +20,26 @@ public class Main {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        StringBuilder sb = new StringBuilder();
 
+        ArrayList<Character> list = new ArrayList<>(); // Character 타입으로 선언
 
         int N = Integer.parseInt(st.nextToken());
         int B = Integer.parseInt(st.nextToken());
 
-        while (N > 0) {
-            if (N % B < 10) {
-                sb.append(N % B);
+        while (N > 0) { // 몫이 0보다 큰 경우
+            if (N % B < 10) { // 나머지가 10보다 작을 경우
+                list.add((char) (N % B + '0'));
+                //ㄴ 숫자 그대로 출력 : '0'의 아스키 코드값은 48, '1'은 49 ... '6'은 54 => 문자열 list에 추가해야하므로 '0' 더해줌
             } else {
-                sb.append((char) ((N % B) + 55));
+                list.add((char) ((N % B) + 55));
             }
-            N /= B;
+            N /= B; // B로 나눈 몫 갱신
         }
 
         br.close();
 
-        System.out.print(sb.reverse());
+        for (int i = list.size() -1; i >=0; i--) { //거꾸로 출력해야 하므로
+            System.out.print(list.get(i));
+        }
     }
 }
