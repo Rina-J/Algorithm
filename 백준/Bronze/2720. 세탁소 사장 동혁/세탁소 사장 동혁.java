@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
 
         int T = Integer.parseInt(br.readLine());
 
@@ -15,14 +16,16 @@ public class Main {
 
         for (int i = 0; i < T; i++) {
             int C = Integer.parseInt(br.readLine());
-            System.out.print(C / q + " ");
+            sb.append(C / q + " ");
             C %= q;
-            System.out.print(C / d + " ");
+            sb.append(C / d + " ");
             C %= d;
-            System.out.print(C / n + " ");
+            sb.append(C / n + " ");
             C %= n;
-            System.out.println(C / p);
+            sb.append(C / p + " \n");
         }
         br.close();
+
+        System.out.println(sb);
     }
 }
