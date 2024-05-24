@@ -13,9 +13,9 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        int up = Integer.parseInt(st.nextToken());;
-        int down = Integer.parseInt(st.nextToken());;
-        int length = Integer.parseInt(st.nextToken());;
+        int up = Integer.parseInt(st.nextToken());
+        int down = Integer.parseInt(st.nextToken());
+        int length = Integer.parseInt(st.nextToken());
 
         br.close();
 
