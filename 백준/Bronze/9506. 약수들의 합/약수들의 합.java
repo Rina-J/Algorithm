@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -17,30 +18,37 @@ public class Main {
             StringBuilder sb = new StringBuilder();
             int n = Integer.parseInt(br.readLine());
 
+            ArrayList<Integer> arr = new ArrayList<>();
+
             if (n == -1) {
                 break;
             }
 
-            sb.append(n + " = 1");
+            int sum = 0;
 
-            int sum = 1;
-
-            for (int i = 2; i < n; i++) {
-
+            for (int i = 1; i < n; i++) {
                 if (n % i == 0) {
-                    sb.append(" + " + i);
                     sum += i;
+                    arr.add(i);
                 }
-
             }
 
-            if (n == sum) {
-                System.out.println(sb);
+            if(n == sum) {
+                sb.append(n).append(" = ");
+                
+                for(int i =0; i<arr.size(); i++) {
+                    if (i != arr.size()-1) {
+                        sb.append(arr.get(i)).append(" + ");
+                    } else {
+                        sb.append(arr.get(i));
+                    }
+                }
+                
             } else {
-                System.out.println(n + " is NOT perfect.");
+                sb.append(n).append(" is NOT perfect.");
             }
+            System.out.println(sb);
         }
         br.close();
-
     }
 }
