@@ -33,17 +33,17 @@ public class Main {
                 }
             }
 
-            if(n == sum) {
+            if (n == sum) {
                 sb.append(n).append(" = ");
-                
-                for(int i =0; i<arr.size(); i++) {
-                    if (i != arr.size()-1) {
+
+                for (int i = 0; i < arr.size(); i++) {
+                    if (i != arr.size() - 1) {
                         sb.append(arr.get(i)).append(" + ");
                     } else {
                         sb.append(arr.get(i));
                     }
                 }
-                
+
             } else {
                 sb.append(n).append(" is NOT perfect.");
             }
