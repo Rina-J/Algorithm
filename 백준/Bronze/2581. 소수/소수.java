@@ -31,6 +31,7 @@ public class Main {
             for (int j = 2; j < i; j++) { // 1소수가 아니기 때문에 j=2부터 시작
                 if (i % j == 0) { // i % j의 값이 0이면 약수가 1개 이상 있는것
                     cnt++;
+                    break;
                 }
             }
 
