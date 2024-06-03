@@ -13,9 +13,7 @@ public class Main {
            20 24
            40 21
            10 12
-
            => 360
-
            (maxX - minX) * (maxY - minY)
            (40-10) * (24-12) = 360
         */
@@ -35,6 +33,8 @@ public class Main {
 
         Arrays.sort(x);
         Arrays.sort(y);
+        
+        br.close();
 
         System.out.println( (x[N-1] - x[0]) * (y[N-1] - y[0]) );
     }
