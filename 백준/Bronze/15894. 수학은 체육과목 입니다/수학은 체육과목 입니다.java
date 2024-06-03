@@ -11,6 +11,8 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         long n = Long.parseLong(br.readLine());
+        
+        br.close();
 
         System.out.println(4 * n);
     }
